@@ -18,7 +18,7 @@ camera_width   = 1920
 camera_height  = 1080
 
 now         = datetime.datetime.now()
-case_date   = '{0:%Y%m%d}'.format(date))
+case_date   = '{0:%Y%m%d}'.format(date)
 
 os.mkdir('../'+case_date)
 

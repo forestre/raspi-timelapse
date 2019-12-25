@@ -20,7 +20,8 @@ camera_height  = 1080
 now         = datetime.datetime.now()
 case_date   = '{0:%Y%m%d}'.format(now)
 
-os.mkdir('../'+case_date)
+if not os.path.exists('../'+case_date):
+    os.mkdir('../'+case_date)
 
 with picamera.PiCamera() as camera:
 
@@ -29,5 +30,5 @@ with picamera.PiCamera() as camera:
     camera.hflip = True
 
     for i in range(photo_count):
-        camera.capture(case_name + '/image{0:04d}.jpg'.format(i))
+        camera.capture('../'+ case_date + '/image{0:04d}.jpg'.format(i))
         sleep(photo_interval)
